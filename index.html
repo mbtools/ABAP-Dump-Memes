@@ -6,7 +6,7 @@
         width: 50%;
     }
     h1 { 
-        margin-top: 200px;
+        padding-top: 200px;
     }
     </style>
     <h1 class="center">Crash, Boom, Bang!</h1>
@@ -15,32 +15,37 @@
       Your browser does not support the video tag.
     </video>
     </div>
+    <h2 class="center" id="error"></h2>
     <script type="text/javascript">
-function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
-var err = getParameterByName("error");        
-var exc = getParameterByName("exception");
-var img = "";
-var vid = "";
-if (exc) {
-    vid = exc + '.mp4';
-} else if (err) {
-    vid = err + '.mp4';
-} else {
-    img = '_RELAX_.jpg';     
-} 
-if (vid) {
-    document.getElementById('video').setAttribute( "src", "https://mbtools.github.io/ABAP-Dump-Memes/img/" + vid );
-} else {
-    document.getElementById('image').innerHTML = '<img src="https://mbtools.github.io/ABAP-Dump-Memes/img/' + img + '"/>';
-}
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+    var err = getParameterByName("error");        
+    var exc = getParameterByName("exception");
+    var img = "";
+    var vid = "";
+    var h2 = "";
+    if (exc) {
+        vid = exc + '.mp4';
+        h2 = 'Exception ' + exc;
+    } else if (err) {
+        vid = err + '.mp4';
+        h2 = 'Error ' + err;
+    } else {
+        img = '_RELAX_.jpg';
+    } 
+    if (vid) {
+        document.getElementById('video').setAttribute( "src", "https://mbtools.github.io/ABAP-Dump-Memes/img/" + vid );
+    } else {
+        document.getElementById('image').innerHTML = '<img src="https://mbtools.github.io/ABAP-Dump-Memes/img/' + img + '"/>';
+    }
+    document.getElementById('error').innerHTML = h2;        
     </script>
 </body>
 </html>
