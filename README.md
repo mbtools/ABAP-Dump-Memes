@@ -23,7 +23,7 @@ FORM init.
 ENDFORM.
 ```
 
-4. Activate the include
+3. Activate the include
 
 ## Usage
 
