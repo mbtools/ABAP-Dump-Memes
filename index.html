@@ -21,20 +21,17 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
-
 var err = getParameterByName("error");        
 var exc = getParameterByName("exception");
-var html = "";
-if (err == "UNCAUGHT_EXCEPTION" && exc) {
-    html = '<img src="https://mbtools.github.io/ABAP-Dump-Memes/img/' + exc + '.gif"/>';
-}
-if (err) {
-    html = '<img src="https://mbtools.github.io/ABAP-Dump-Memes/img/' + err + '.gif"/>';
-}
-if (!html) {
-    html = '<img src="https://mbtools.github.io/ABAP-Dump-Memes/img/_RELAX_.jpg"/>';     
+var img = "";
+if (exc) {
+    img = exc + '.gif';
+} else if (err) {
+    img = err + '.gif';
+} else {
+    img = '_RELAX_.jpg';     
 } 
-document.getElementById('image').innerHTML = html;    
+document.getElementById('image').innerHTML = '<img src="https://mbtools.github.io/ABAP-Dump-Memes/img/' + img + '"/>';
     </script>
 </body>
 </html>
