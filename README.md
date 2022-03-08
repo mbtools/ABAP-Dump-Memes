@@ -28,3 +28,9 @@ ENDFORM.
 ## Usage
 
 Run some code that causes a dump in SAP GUI 😁
+
+## Add Memes
+
+Upload memes to the `/img/` folder using `<RUNTIME_ERROR>.mp4` or `<EXCEPTION>.mp4` as a filename.
+
+Note: You can use https://twdownload.com/ to download the `mp4` file from a tweet.
