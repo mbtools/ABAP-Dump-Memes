@@ -1,7 +1,16 @@
 <html>
 <body>
-    <h1>Crash, Boom, Bang!</h1>
-    <div id="image"></div>
+    <style>
+    .center {
+        margin: auto;
+        width: 50%;
+    }
+    h1 { 
+        top: 200px;
+    }
+    </style>
+    <h1 class="center">Crash, Boom, Bang!</h1>
+    <div id="image" class="center"></div>
     <script type="text/javascript">
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -13,10 +22,19 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
+var err = getParameterByName("error");        
 var exc = getParameterByName("exception");
-if (exc) {
-  document.getElementById('image').innerHTML += '<img src="https://mbtools.github.io/ABAP-Dump-Memes/img/' + exc + '.gif"/>';
+var html = "";
+if (err == "UNCAUGHT_EXCEPTION" && exc) {
+    html = '<img src="https://mbtools.github.io/ABAP-Dump-Memes/img/' + exc + '.gif"/>';
 }
+if (err) {
+    html = '<img src="https://mbtools.github.io/ABAP-Dump-Memes/img/' + err + '.gif"/>';
+}
+if (!html) {
+    html = '<img src="https://mbtools.github.io/ABAP-Dump-Memes/img/_RELAX_.jpg"/>';     
+} 
+document.getElementById('image').innerHTML = html;    
     </script>
 </body>
 </html>
