@@ -1,6 +1,6 @@
 # Memes for ABAP Dumps
 
-![image](https://user-images.githubusercontent.com/59966492/157306008-46416436-ab0f-41dc-b136-9b5d1b90a44c.png)
+![image](https://user-images.githubusercontent.com/59966492/157306497-dc3d9964-db81-4edf-9928-a789a367f3fb.png)
 
 ## Installation
 
