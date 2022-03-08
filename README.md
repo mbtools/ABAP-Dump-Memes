@@ -29,6 +29,10 @@ ENDFORM.
 
 Run some code that causes a dump in SAP GUI 😁
 
+[Test for Runtime Error](https://mbtools.github.io/ABAP-Dump-Memes/index.html?exception=ITAB_LINE_NOT_FOUND)
+
+[Test for Exception](https://mbtools.github.io/ABAP-Dump-Memes/index.html?exception=CX_SY_ZERODIVIDE)
+
 ## Add Memes
 
 Upload memes to the `/img/` folder using `<RUNTIME_ERROR>.mp4` or `<EXCEPTION>.mp4` as a filename.
