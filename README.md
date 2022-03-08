@@ -1,5 +1,7 @@
 # Memes for ABAP Dumps
 
+![image](https://user-images.githubusercontent.com/59966492/157306008-46416436-ab0f-41dc-b136-9b5d1b90a44c.png)
+
 ## Installation
 
 1. Edit include `MS380F10` (Note: In recent releases, this program is protected so enhancement are not allowed)
