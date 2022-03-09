@@ -19,8 +19,8 @@ var h2 = "";
 if (txt) {
   var memes = memeSearch( txt );  
   // Array of meme objects, each meme object of the format { title, image_url }
-  console.log(memes);
   if (memes) {
+    console.log(memes[0]);
     img = memes[0]["image_url"];
   } else {
     img = "RELAX.jpg";
