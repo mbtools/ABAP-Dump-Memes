@@ -21,7 +21,7 @@ if (txt) {
   // Array of meme objects, each meme object of the format { title, image_url }
   console.log(memes);
   if (memes) {
-    img = memes[0].image_url;
+    img = memes[0]["image_url"];
   } else {
     img = "RELAX.jpg";
   }
