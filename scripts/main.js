@@ -25,10 +25,8 @@ if (txt) {
   }
 } else if (exc) {
     vid = exc + '.mp4';
-    h2 = 'Exception ' + exc;
 } else if (err) {
     vid = err + '.mp4';
-    h2 = 'Error ' + err;
 } else {
     img = '_RELAX_.jpg';
 }
@@ -36,5 +34,13 @@ if (vid) {
     document.getElementById('video').setAttribute( "src", "img/" + vid );
 } else {
     document.getElementById('image').innerHTML = '<img src="img/' + img + '"/>';
+}
+
+if (exc) {
+  h2 = 'Exception ' + exc;
+} else if (err) {
+  h2 = 'Error ' + err;
+} else {
+  h2 = txt;
 }
 document.getElementById('error').innerHTML = h2;
