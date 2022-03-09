@@ -21,8 +21,8 @@ function memeSearch( keyword ) {
         }
       })
       .then(response => {
-        console.log(response);
-        let data = JSON.parse(response.body);
+        // console.log(response);
+        let data = JSON.parse(response);
         let posts = data.data.children;
         let memes = [];
         
