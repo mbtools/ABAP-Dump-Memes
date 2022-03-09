@@ -295,9 +295,11 @@ a {
 */
 
 h1 { 
-  padding-top: 120px;
+  padding: 120px 0px 50px;
+}
+h2 { 
+  padding-top: 50px;
 }
 .center {
-  margin: 0 auto;
-  width: 100%;
+  text-align: center;
 }
