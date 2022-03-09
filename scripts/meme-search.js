@@ -15,7 +15,8 @@ function memeSearch( keyword ) {
     fetch(request)
       .then(response => response.json())
       .then(data => {
-        let posts = data.children;
+        console.log(data);
+        let posts = data.data.children;
         let memes = [];
         for (var post of posts) {
             if (post.data.post_hint != "image") continue; // Ignore posts that aren't images

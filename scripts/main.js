@@ -21,26 +21,26 @@ if (txt) {
   if (memes) {
     img = memes[0].image_url;
   } else {
-    img = '_RELAX_.jpg';
+    img = "_RELAX_.jpg";
   }
 } else if (exc) {
-    vid = exc + '.mp4';
+    vid = exc + ".mp4";
 } else if (err) {
-    vid = err + '.mp4';
+    vid = err + ".mp4";
 } else {
-    img = '_RELAX_.jpg';
+    img = "_RELAX_.jpg";
 }
 if (vid) {
-    document.getElementById('video').setAttribute( "src", "img/" + vid );
+    document.getElementById("video").setAttribute( "src", "img/" + vid );
 } else {
-    document.getElementById('image').innerHTML = '<img src="img/' + img + '"/>';
+    document.getElementById("image").innerHTML = '<img src="img/' + img + '"/>';
 }
 
 if (exc) {
-  h2 = 'Exception ' + exc;
+  h2 = "Exception " + exc;
 } else if (err) {
-  h2 = 'Error ' + err;
+  h2 = "Error " + err;
 } else {
   h2 = txt;
 }
-document.getElementById('error').innerHTML = h2;
+document.getElementById("error").innerHTML = h2;
