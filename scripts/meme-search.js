@@ -1,6 +1,6 @@
 // Based on https://github.com/aDu/meme-search
 // NO LICENSE
-function memeSearch( keyword ) {
+function memeSearch(keyword) {
     if (keyword) keyword = keyword.trim();
 
     if (!keyword || keyword == "") keyword = "SAP";
@@ -12,21 +12,21 @@ function memeSearch( keyword ) {
 
     let request = new Request(uri);
     let memes = [];
-
+    
     fetch(request)
-      .then(response => response.json())
-      .then(data => {
+        .then(response => response.json())
+        .then(data => {
         // console.log(data);
         let posts = data.data.children;
         for (var post of posts) {
             if (post.data.post_hint != "image") continue; // Ignore posts that aren't images
             memes.push({
                 title: post.data.title,
-                imageUrl: post.data.url
+                image: post.data.url
             });
         } 
-      })
-      .catch(console.error);
+        })
+        .catch(console.error);
 
-      return memes;
+    return memes;
 }
