@@ -14,6 +14,8 @@ var txt = getParameterByName("text");
 var img = "";
 var vid = "";
 var h2 = "";
+
+// Visualization as Video or Image
 if (txt) {
   var memes = memeSearch( txt );  
   // Array of meme objects, each meme object of the format { title, image_url }
@@ -21,14 +23,14 @@ if (txt) {
   if (memes) {
     img = memes[0].image_url;
   } else {
-    img = "_RELAX_.jpg";
+    img = "RELAX.jpg";
   }
 } else if (exc) {
     vid = exc + ".mp4";
 } else if (err) {
     vid = err + ".mp4";
 } else {
-    img = "_RELAX_.jpg";
+    img = "RELAX.jpg";
 }
 if (vid) {
     document.getElementById("video").setAttribute( "src", "img/" + vid );
@@ -36,6 +38,7 @@ if (vid) {
     document.getElementById("image").innerHTML = '<img src="img/' + img + '"/>';
 }
 
+// Description
 if (exc) {
   h2 = "Exception " + exc;
 } else if (err) {

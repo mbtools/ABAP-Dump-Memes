@@ -15,7 +15,7 @@ function memeSearch( keyword ) {
     fetch(request)
       .then(response => response.json())
       .then(data => {
-        console.log(data);
+        // console.log(data);
         let posts = data.data.children;
         let memes = [];
         for (var post of posts) {
@@ -25,7 +25,7 @@ function memeSearch( keyword ) {
                 image_url: post.data.url
             });
         } 
-        return memes;        
+        return memes;
       })
       .catch(console.error);
 }
