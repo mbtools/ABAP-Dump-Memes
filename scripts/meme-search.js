@@ -1,7 +1,6 @@
 // Based on https://github.com/aDu/meme-search
 // NO LICENSE
-
-function memesearch( keyword, ops ) {
+function memeSearch( keyword, ops ) {
     if (keyword) keyword = keyword.trim()
 
     ops.subreddit = ops.subreddit || 'memes'

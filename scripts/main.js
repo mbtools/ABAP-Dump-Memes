@@ -1,6 +1,3 @@
-// https://github.com/aDu/meme-search (NO LICENSE)
-var memeSearch = require('meme-search');
-
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");
