@@ -17,11 +17,11 @@ var h2 = "";
 
 // Visualization as Video or Image
 if (txt) {
-  var mem = memeSearch( txt );  
-  // Array of meme objects, each meme object of the format { title, imageUrl }
+  var mem = memeSearch(txt);
+  // Array of meme objects, each meme object of the format { title, image }
   if (mem) {
     console.log(mem);
-    img = mem[0].imageUrl;
+    img = mem[0].image;
   } else {
     img = "RELAX.jpg";
   }
