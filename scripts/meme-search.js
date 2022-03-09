@@ -1,17 +1,21 @@
 // Based on https://github.com/aDu/meme-search
 // NO LICENSE
 function memeSearch( keyword, ops ) {
-    if (keyword) keyword = keyword.trim()
+    if (keyword) keyword = keyword.trim();
 
-    ops.subreddit = ops.subreddit || 'memes'
-    ops.sort = ops.sort || 'relevance'
+    if (!ops) {
+      let ops = {};
+    }
+    
+    ops.subreddit = ops.subreddit || 'memes';
+    ops.sort = ops.sort || 'relevance';
 
-    if (!keyword || keyword == "") keyword = "meme"
+    if (!keyword || keyword == "") keyword = "meme";
 
     // Generate the URI containing the meme posts from Reddit
     let uri = encodeURI(
         `https://www.reddit.com/r/${ops.subreddit}/search.json?q=${keyword}&restrict_sr=1&sort=${ops.sort}`
-    )
+    );
 
     let request = new Request(uri);
 
