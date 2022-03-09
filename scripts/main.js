@@ -15,16 +15,14 @@ var img = "";
 var vid = "";
 var h2 = "";
 if (txt) {
-  // args: keyword, callback
-  memeSearch( txt, (err, res) => {
-    // Array of meme objects, each meme object of the format { title, image_url }
-    console.log(res);
-    if (res) {
-      img = res[0].image_url;
-    } else {
-      img = '_RELAX_.jpg';
-    }
-  } );
+  var memes = memeSearch( txt );  
+  // Array of meme objects, each meme object of the format { title, image_url }
+  console.log(memes);
+  if (memes) {
+    img = memes[0].image_url;
+  } else {
+    img = '_RELAX_.jpg';
+  }
 } else if (exc) {
     vid = exc + '.mp4';
     h2 = 'Exception ' + exc;
