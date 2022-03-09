@@ -33,8 +33,8 @@ if (txt) {
     img = '_RELAX_.jpg';
 }
 if (vid) {
-    document.getElementById('video').setAttribute( "src", "https://mbtools.github.io/ABAP-Dump-Memes/img/" + vid );
+    document.getElementById('video').setAttribute( "src", "img/" + vid );
 } else {
-    document.getElementById('image').innerHTML = '<img src="https://mbtools.github.io/ABAP-Dump-Memes/img/' + img + '"/>';
+    document.getElementById('image').innerHTML = '<img src="img/' + img + '"/>';
 }
 document.getElementById('error').innerHTML = h2;
