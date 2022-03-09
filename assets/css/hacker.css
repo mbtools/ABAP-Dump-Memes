@@ -91,9 +91,11 @@ header h1 {
                0 0 10px rgba(181, 232, 83, 0.1);
   letter-spacing: -1px;
   -webkit-font-smoothing: antialiased;
+  /*
   @include media-max-width($container-max-width) {
     margin-left: 0;
   }
+  */
 }
 
 
@@ -296,6 +298,5 @@ h1 {
   padding-top: 120px;
 }
 .center {
-  margin: auto;
-  width: 50%;
+  margin: 0 auto;
 }
