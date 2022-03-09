@@ -13,19 +13,10 @@ function memeSearch( keyword ) {
     let request = new Request(uri);
 
     fetch(request)
-      .then(response => {
-        if (response.status === 200) {
-          return response.json();
-        } else {
-          throw new Error('Something went wrong on api server!');
-        }
-      })
-      .then(response => {
-        // console.log(response);
-        let data = JSON.parse(response);
-        let posts = data.data.children;
+      .then(response => response.json())
+      .then(data => {
+        let posts = data.children;
         let memes = [];
-        
         for (var post of posts) {
             if (post.data.post_hint != "image") continue; // Ignore posts that aren't images
             memes.push({
@@ -33,9 +24,7 @@ function memeSearch( keyword ) {
                 image_url: post.data.url
             });
         } 
-        
-        return memes;
-      }).catch(error => {
-        console.error(error);
-      });
+        return memes;        
+      })
+      .catch(console.error);
 }
