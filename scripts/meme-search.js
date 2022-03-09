@@ -22,7 +22,7 @@ function memeSearch( keyword ) {
             if (post.data.post_hint != "image") continue; // Ignore posts that aren't images
             memes.push({
                 title: post.data.title,
-                image_url: post.data.url
+                imageUrl: post.data.url
             });
         } 
       })
