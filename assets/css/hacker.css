@@ -254,7 +254,7 @@ hr {
   width: 16px;
   height: 16px;
   margin: 1px 8px 0 0;
-  float: left;
+  /* float: left; */
 }
 
 .btn-github .icon {
