@@ -11,13 +11,13 @@ function memeSearch( keyword ) {
     );
 
     let request = new Request(uri);
+    let memes = [];
 
     fetch(request)
       .then(response => response.json())
       .then(data => {
         // console.log(data);
         let posts = data.data.children;
-        let memes = [];
         for (var post of posts) {
             if (post.data.post_hint != "image") continue; // Ignore posts that aren't images
             memes.push({
@@ -25,7 +25,8 @@ function memeSearch( keyword ) {
                 image_url: post.data.url
             });
         } 
-        return memes;
       })
       .catch(console.error);
+
+      return memes;
 }
