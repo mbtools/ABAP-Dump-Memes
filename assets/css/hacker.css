@@ -1,18 +1,6 @@
 /* 
-  Hacker Theme 
+  Styles based on GitHub Hacker Theme
   https://github.com/pages-themes/hacker
-*/
-h1 { 
-    padding-top: 200px;
-}
-.center {
-    margin: auto;
-    width: 50%;
-}
-
-/*
-  GitHub Hacker Theme
-  https://github.com/pages-themes/hacker/tree/master/assets
 */
 
 /* @import "default_colors"; 
@@ -298,4 +286,16 @@ a {
 
 #a-title {
   text-decoration: none;
+}
+
+/*
+  Additions for ABAP-Dump-Memes
+*/
+
+h1 { 
+  padding-top: 120px;
+}
+.center {
+  margin: auto;
+  width: 50%;
 }
