@@ -278,6 +278,6 @@ h1 {
 h2 { 
   padding: 30px 0px 20px;
 }
-#meme {
-  max-height: 500px;
+.meme {
+  max-height: 640px;
 }

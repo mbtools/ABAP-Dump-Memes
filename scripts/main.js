@@ -36,9 +36,9 @@ if (txt) {
     img = "img/RELAX.jpg";
 }
 if (vid) {
-  setHTML("meme", '<video height="480" autoplay loop muted defaultmuted playsinline src="' + vid + '">Sorry, your browser does not support videos</video>' );
+  setHTML("meme", '<video class="meme" autoplay loop muted defaultmuted playsinline src="' + vid + '">Sorry, your browser does not support videos</video>' );
 } else {
-  setHTML("meme", '<img src="' + img + '"/>' );
+  setHTML("meme", '<img class="meme" src="' + img + '"/>' );
 }
 
 // Error Code and Description
