@@ -18,10 +18,10 @@ var h2 = "";
 // Visualization as Video or Image
 if (txt) {
   var mem = memeSearch(txt);
-  // Array of meme objects, each meme object of the format { title, image }
+  // Array of meme objects, each meme object of the format { title, imageURL }
   if (mem) {
     console.log(mem);
-    img = mem[0].image;
+    img = mem[0].imageURL;
   } else {
     img = "RELAX.jpg";
   }

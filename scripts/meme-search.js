@@ -1,5 +1,6 @@
-// Based on https://github.com/aDu/meme-search
-// NO LICENSE
+// MEME Search on Reddit
+// Returns promise to array of { titel, imageURL } 
+// Similar to https://github.com/aDu/meme-search
 function memeSearch(keyword) {
     if (keyword) keyword = keyword.trim();
 
@@ -10,23 +11,22 @@ function memeSearch(keyword) {
         `https://www.reddit.com/r/memes/search.json?q=${keyword}&restrict_sr=1&sort=relevance`
     );
 
-    let request = new Request(uri);
-    let memes = [];
+    // Synchronous request to get search results
+    let request = new XMLHttpRequest();
+    request.open('GET', uri, false);
+    request.send(null);
     
-    fetch(request)
-        .then(response => response.json())
-        .then(data => {
-        // console.log(data);
+    if (request.status === 200) {
+        let data = JSON.parse( request.responseText );
         let posts = data.data.children;
+        let memes = [];
         for (var post of posts) {
             if (post.data.post_hint != "image") continue; // Ignore posts that aren't images
             memes.push({
                 title: post.data.title,
-                image: post.data.url
+                imageURL: post.data.url
             });
         } 
-        })
-        .catch(console.error);
-
-    return memes;
+        return memes;
+    }    
 }
