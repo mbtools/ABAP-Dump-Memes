@@ -1,6 +1,7 @@
 // MEME Search on Reddit
-// Returns promise to array of { titel, imageURL } 
-// Similar to https://github.com/aDu/meme-search
+// Returns array of { titel, imageURL } 
+//
+// Idea based on https://github.com/aDu/meme-search
 function memeSearch(keyword) {
     if (keyword) keyword = keyword.trim();
 
