@@ -49,7 +49,7 @@ body {
 .container {
   width: 90%;
   max-width: 1000px; /* $container-max-width; */
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 section {
@@ -291,6 +291,52 @@ a {
 }
 
 /*
+  Grid & Flex "place shorthand" examples
+  https://codepen.io/argyleink/pen/PoqWOPZ
+*/
+
+/*
+.container {
+  min-block-size: 25ch;
+  inline-size: 100%;
+  max-inline-size: 720px;
+  background: hsl(0 0% 90%);
+  padding: 2rem;
+  box-sizing: border-box;
+  margin-inline: auto;
+}
+*/
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+}
+
+.place-items {
+  place-items: center;
+}
+
+.place-content {
+  place-content: center;
+}
+
+.align-items-and-content {
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/*
   Additions for ABAP-Dump-Memes
 */
 
@@ -298,8 +344,13 @@ h1 {
   padding: 30px 0px 10px;
 }
 h2 { 
-  padding-top: 30px 0px 20px;
+  padding: 30px 0px 20px;
 }
+/*
 .center {
   text-align: center;
+}
+*/
+#meme {
+  max-height: 500px;
 }
