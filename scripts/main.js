@@ -24,7 +24,7 @@ let vid = "";
 if (txt) {
   const mem = memeSearch(txt);
   if (mem) {
-    img = mem[0].imageURL;
+    img = mem[Math.floor(Math.random() * mem.length)].imageURL; 
   } else {
     img = "img/RELAX.jpg";
   }
