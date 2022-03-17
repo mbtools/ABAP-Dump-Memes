@@ -44,6 +44,9 @@ Run some code that causes a dump in SAP GUI 😁. For example:
 ```abap
 REPORT ztest_x.
 MESSAGE 'This is a runtime error' TYPE 'X'.
+* or
+DATA(exc) = NEW cx_sy_ref_is_initial( ).
+RAISE EXCEPTION exc.
 ```
 
 ## Demo
