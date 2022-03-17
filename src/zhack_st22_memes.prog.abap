@@ -4,16 +4,14 @@ DATA text TYPE string.
 DATA texts TYPE TABLE OF string.
 
 GET PARAMETER ID 'ZHACK_ST22_MEMES' FIELD version.
-CASE version.
-  WHEN ''.
-    RETURN.
-  WHEN '1' OR 'X'.
-    version = '1'.
-  WHEN OTHERS.
-    version = '2'.
-ENDCASE.
 
-url = |https://mbtools.github.io/ABAP-Dump-Memes/index.html?version={ version }|.
+IF version IS INITIAL.
+  RETURN.
+ELSEIF version <> '1' AND version <> '2'.
+  version = '2'.
+ENDIF.
+
+url = |https://mbtools.github.io/ABAP-Dump-Memes/index_v2.html?version={ version }|.
 
 IF cerrid IS NOT INITIAL.
   url = url && |&error={ to_upper( cerrid ) }|.
