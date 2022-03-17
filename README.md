@@ -4,36 +4,52 @@
 
 ## Installation
 
-1. Edit include `MS380F10` (Note: In recent releases, this program is protected so enhancement are not allowed)
-2. At the end of `FORM INIT.` add the following code
+1. Install this repo using [abapGit](https://github.com/abapGit/abapGit)
+2. Edit include `MS380F10` (Note: In recent releases, this program is protected so enhancement are not allowed)
+3. At the end of `FORM INIT.` add the following code
 
 ```abap
 FORM init.
 ...
+*{   INSERT         &$&$&$&$                                         
+  INCLUDE zhack_st22_memes.
+*}   INSERT
 
-  DATA url TYPE string.
-  url = |https://mbtools.github.io/ABAP-Dump-Memes/index.html?error={ cerrid }|.
-  IF exc_name IS NOT INITIAL.
-    url = url && |&exception={ exc_name }|.
-  ENDIF.
-  cl_abap_browser=>show_url(
-    title  = 'Crash, Boom, Bang'
-    size   = cl_abap_browser=>xlarge
-    url    = url
-    dialog = abap_false ).
-  
 ENDFORM.
 ```
 
-3. Activate the include
+4. Activate the includes `ZHACK_ST22_MEMES` and `MS380F10`.
+
+Alternatively, you can copy the code from [here](https://github.com/mbtools/ABAP-Dump-Memes/blob/main/src/zhack_st22_memes.prog.abap)
+directly into include `MS380F10`.
 
 ## Usage
 
+There are there modes:
+
+Parameter Value | Mode 
+----------------|-----
+initial         | Regular dump (default)
+1               | Currated memes for selected runtime errors and exceptions (see [`/img`](https://github.com/mbtools/ABAP-Dump-Memes/tree/main/img) folder)
+2               | Random memes based on a Reddit search matching the description of the error or exception
+
+You set the mode using a parameter `ZHACK_ST22_MEMES` in transactions `SU01` or `SU3`:
+
+![image](https://user-images.githubusercontent.com/59966492/158844133-2f542546-e763-4fef-9f5c-b6e7cbaa8bbc.png)
+
+## Trigger
+
 Run some code that causes a dump in SAP GUI 😁
 
-[Test for Runtime Error](https://mbtools.github.io/ABAP-Dump-Memes/index.html?exception=ITAB_LINE_NOT_FOUND)
+## Demo
 
-[Test for Exception](https://mbtools.github.io/ABAP-Dump-Memes/index.html?exception=CX_SY_ZERODIVIDE)
+Here are some examples of what the result will look like:
+
+[Mode 1: Runtime Error](https://mbtools.github.io/ABAP-Dump-Memes/index.html?version=1&exception=ITAB_LINE_NOT_FOUND)
+
+[Mode 1: Exception](https://mbtools.github.io/ABAP-Dump-Memes/index.html?version=1&exception=CX_SY_ZERODIVIDE)
+
+[Mode 2: Random Meme](https://mbtools.github.io/ABAP-Dump-Memes/index.html?version=2&text=Message%20type%20is%20unknown.)
 
 ## Add Memes
 
