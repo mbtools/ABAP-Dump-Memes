@@ -8,7 +8,7 @@ function memeSearch(keyword) {
     if (!keyword || keyword == "") keyword = "SAP";
 
     // Generate the URI containing the meme posts from Reddit
-    let uri = encodeURI( 'https://www.reddit.com/r/memes/search.json?q=' + keyword + '&restrict_sr=1&sort=relevance' );
+    const uri = encodeURI( 'https://www.reddit.com/r/memes/search.json?q=' + keyword + '&restrict_sr=1&sort=relevance' );
 
     // Synchronous request to get search results
     let request = new XMLHttpRequest();
@@ -16,16 +16,16 @@ function memeSearch(keyword) {
     request.send(null);
     
     if (request.status === 200) {
-        let data = JSON.parse( request.responseText );
-        let posts = data.data.children;
+        const data = JSON.parse( request.responseText );
+        const posts = data.data.children;
         let memes = [];
-        for (var post of posts) {
+        for (const post of posts) {
             if (post.data.post_hint != "image") continue; // Ignore posts that aren't images
             memes.push({
                 title: post.data.title,
                 imageURL: post.data.url
             });
-        } 
+        }
         return memes;
-    }    
+    }
 }
