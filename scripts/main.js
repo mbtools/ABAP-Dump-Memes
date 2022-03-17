@@ -18,6 +18,11 @@ const err = getParameterByName("error");
 const exc = getParameterByName("exception");
 const txt = getParameterByName("text");
 
+console.log( 'Version:' + ver );
+console.log( 'Error:' + err );
+console.log( 'Exception:' + exc );
+console.log( 'Text:' + txt );
+
 // Visualization as Video or Image
 let img = "";
 let vid = "";
@@ -37,8 +42,10 @@ if (ver == '2' && txt) {
     img = "img/RELAX.jpg";
 }
 if (vid) {
+  console.log( 'Video:' + vid );
   setHTML("meme", '<video class="meme" autoplay loop muted defaultmuted playsinline src="' + vid + '">Sorry, your browser does not support videos</video>' );
 } else {
+  console.log( 'Image:' + img );
   setHTML("meme", '<img class="meme" src="' + img + '"/>' );
 }
 
