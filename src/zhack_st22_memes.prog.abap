@@ -1,10 +1,20 @@
-CONSTANTS version TYPE i VALUE 2.
-
+DATA version TYPE c LENGTH 1.
 DATA url TYPE string.
 DATA text TYPE string.
 DATA texts TYPE TABLE OF string.
 
-url = |https://mbtools.github.io/ABAP-Dump-Memes/index_v2.html?version={ version }|.
+GET PARAMETER ID 'ZHACK_ST22_MEMES' FIELD version.
+CASE version.
+  WHEN ''.
+    RETURN.
+  WHEN '1' OR 'X'.
+    version = '1'.
+  WHEN OTHERS.
+    version = '2'.
+ENDCASE.
+
+url = |https://mbtools.github.io/ABAP-Dump-Memes/index.html?version={ version }|.
+
 IF cerrid IS NOT INITIAL.
   url = url && |&error={ to_upper( cerrid ) }|.
   SELECT tline FROM snapt INTO TABLE texts WHERE langu = 'E' AND errid = cerrid AND ttype = 'K' ORDER BY PRIMARY KEY.
