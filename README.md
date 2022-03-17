@@ -27,11 +27,13 @@ directly into include `MS380F10`.
 
 There are there modes:
 
-Parameter Value | Mode 
-----------------|-----
-initial         | Regular dump (default)
-1               | Currated memes for selected runtime errors and exceptions (see [`/img`](https://github.com/mbtools/ABAP-Dump-Memes/tree/main/img) folder)
-2               | Random memes based on a Reddit search matching the description of the error or exception
+Parameter Value | Mode          | Source for Memes
+----------------|---------------|------------------------
+initial         | Regular dump (default) | n/a
+1               | **Currated memes** for selected runtime errors and exceptions | See [`/img`](https://github.com/mbtools/ABAP-Dump-Memes/tree/main/img) folder
+2               | **Random memes** matching the description of the error or exception | Reddit search on /r/Meme community 
+
+*Beware: Mode 2 is for the brave since you don't know what you will get!*
 
 You set the mode using a parameter `ZHACK_ST22_MEMES` in transactions `SU01` or `SU3`:
 
