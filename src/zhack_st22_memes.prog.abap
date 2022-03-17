@@ -17,6 +17,7 @@ IF cerrid IS NOT INITIAL.
   url = url && |&error={ to_upper( cerrid ) }|.
   SELECT tline FROM snapt INTO TABLE texts WHERE langu = 'E' AND errid = cerrid AND ttype = 'K' ORDER BY PRIMARY KEY.
   CONCATENATE LINES OF texts INTO text SEPARATED BY space.
+  REPLACE ALL OCCURRENCES OF REGEX '&[A-Z][A-Z0-9]' IN text WITH ''.  
 ENDIF.
 IF exc_name IS NOT INITIAL.
   url = url && |&exception={ to_upper( exc_name ) }|.
