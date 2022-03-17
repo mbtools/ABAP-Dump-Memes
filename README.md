@@ -39,7 +39,12 @@ You set the mode using a parameter `ZHACK_ST22_MEMES` in transactions `SU01` or 
 
 ## Trigger
 
-Run some code that causes a dump in SAP GUI 😁
+Run some code that causes a dump in SAP GUI 😁. For example:
+
+```abap
+REPORT ztest_x.
+MESSAGE 'This is a runtime error' TYPE 'X'.
+```
 
 ## Demo
 
