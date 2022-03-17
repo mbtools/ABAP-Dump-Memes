@@ -8,9 +8,7 @@ function memeSearch(keyword) {
     if (!keyword || keyword == "") keyword = "SAP";
 
     // Generate the URI containing the meme posts from Reddit
-    let uri = encodeURI(
-        `https://www.reddit.com/r/memes/search.json?q=${keyword}&restrict_sr=1&sort=relevance`
-    );
+    let uri = encodeURI( 'https://www.reddit.com/r/memes/search.json?q=' + keyword + '&restrict_sr=1&sort=relevance' );
 
     // Synchronous request to get search results
     let request = new XMLHttpRequest();
