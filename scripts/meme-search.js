@@ -19,12 +19,12 @@ function memeSearch(keyword) {
         const data = JSON.parse( request.responseText );
         const posts = data.data.children;
         let memes = [];
-        for (const post of posts) {
-            if (post.data.post_hint != "image") continue; // Ignore posts that aren't images
-            memes.push({
-                title: post.data.title,
-                imageURL: post.data.url
-            });
+        for(let i =0; i < posts.length; i++) {
+            if (post[i].data.post_hint != "image") continue; // Ignore posts that aren't images
+            memes.push( {
+                title: post[i].data.title,
+                imageURL: post[i].data.url
+            } );
         }
         return memes;
     }
