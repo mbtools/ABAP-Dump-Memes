@@ -13,7 +13,8 @@ function setHTML(id, html) {
 }
 
 // Get Parameters from URL
-const err = getParameterByName("error");    
+const ver = getParameterByName("version");
+const err = getParameterByName("error");
 const exc = getParameterByName("exception");
 const txt = getParameterByName("text");
 
@@ -21,7 +22,7 @@ const txt = getParameterByName("text");
 let img = "";
 let vid = "";
 
-if (txt) {
+if (ver == '2' && txt) {
   const mem = memeSearch(txt);
   if (mem) {
     img = mem[Math.floor(Math.random() * mem.length)].imageURL; 
@@ -50,4 +51,3 @@ if (exc) {
 if (txt) {
   setHTML("text", txt);
 }
-
