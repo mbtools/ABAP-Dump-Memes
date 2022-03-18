@@ -1,6 +1,6 @@
 # Memes for ABAP Dumps
 
-![image](https://user-images.githubusercontent.com/59966492/158885000-42888f7c-6707-48f6-8e5f-685d3ecf0d4a.png)
+![image](https://user-images.githubusercontent.com/59966492/158985922-5ef3cb0f-ab68-4f61-9bfe-6d90af55d6d0.png)
 
 ## Installation
 
@@ -11,7 +11,7 @@
 ```abap
 FORM init.
 ...
-*{   INSERT         &$&$&$&$                                         
+*{   INSERT
   INCLUDE zhack_st22_memes.
 *}   INSERT
 
@@ -31,9 +31,9 @@ Parameter Value | Mode          | Source for Memes
 ----------------|---------------|------------------------
 initial         | Regular dump (default) | n/a
 1               | **Curated memes** for selected runtime errors and exceptions | See [`/img`](https://github.com/mbtools/ABAP-Dump-Memes/tree/main/img) folder
-2               | **Random memes** matching the description of the error or exception | Reddit search on /r/Meme community 
+2               | **Random memes** "matching" the description of the error or exception | Reddit search on /r/memes community 
 
-*Beware: Mode 2 is for the brave since you don't know what you will get!* 😈
+😈 *Beware: Mode 2 is for the brave since you don't know what you will get!* 😈
 
 You set the mode using a parameter `ZHACK_ST22_MEMES` in transactions `SU01` or `SU3`:
 
