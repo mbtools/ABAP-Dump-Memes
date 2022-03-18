@@ -3,231 +3,56 @@
   https://github.com/pages-themes/hacker
 */
 
-/* @import "default_colors"; 
-$apple-blossom: #ac4142;
-$alto: #d0d0d0;
-$bouquet: #aa759f;
-$chelsea-cucumber: #90a959;
-$cod-grey: #151515;
-$conifer: #b5e853;
-$dove-grey: #666;
-$gallery: #eaeaea;
-$grey: #888;
-$gulf-stream: #75b5aa;
-$hippie-blue: #6a9fb5;
-$potters-clay: #8f5536;
-$rajah: #f4bf75;
-$raw-sienna: #d28445;
-$silver-chalice: #aaa;
-
-$body-background: $cod-grey !default;
-$body-foreground: $gallery !default;
-$header: $conifer !default;
-$blockquote-color: $silver-chalice !default;
-$blockquote-border: $dove-grey !default;
-$container-max-width: 1000px;
-
-@mixin media-max-width($max-width) {
-  @media (max-width: $max-width) {
-      @content;
-  }
-}
-*/
-
 body {
   margin: 0 auto;
   padding: 0;
-  background: #151515 url("../images/bkg.png") 0 0; /* $body-background */
-  color: #eaeaea; /* $body-foreground */
+  background: #151515 url("../images/bkg.png") 0 0; 
+  color: #eaeaea; 
   font-size: 16px;
   line-height: 1.5;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
 }
 
-/* General & 'Reset' Stuff */
-
-.container {
-  width: 100%;
-  max-width: 1000px;
-  height: 100%;
-  max-height: 1000px;
-  margin: auto;
-  left:0; right:0;
-  top:0; bottom:0;
-  position: absolute;
-}
-
-section {
-  display: block;
-  margin: 0 0 20px 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 20px;
-}
-
-li {
-  line-height: 1.4 ;
-}
-
-/* Header, <header>
-   header   - container
-   h1       - project name
-   h2       - project description
-*/
-
-header {
-  background: rgba(0, 0, 0, 0.1);
-  width: 100%;
-  border-bottom: 1px dashed #b5e853; /* $conifer */
-  padding: 20px 0;
-  margin: 0 0 40px 0;
-}
-
-header h1 {
-  font-size: 30px;
-  line-height: 1.5;
-  margin: 0 0 0 -40px; 
-  font-weight: bold;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  color: #b5e853; /* $conifer */
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
-               0 0 5px rgba(181, 232, 83, 0.1),
-               0 0 10px rgba(181, 232, 83, 0.1);
-  letter-spacing: -1px;
-  -webkit-font-smoothing: antialiased;
-}
-
-
-header h1:before {
-  /* content: "./ "; */
-  font-size: 24px;
-}
-
-header h2 {
-  font-size: 18px;
-  font-weight: 300;
-  color: #666;
-}
-
-#downloads .btn {
-  display: inline-block;
-  text-align: center;
-  margin: 0;
-}
-
-/* 
-  Main Content
-*/
-
-#main_content {
-  width: 100%;
-  -webkit-font-smoothing: antialiased;
-}
-section img {
-  max-width: 100%
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  color: #b5e853; /* $header */
+  color: #b5e853; 
   letter-spacing: -0.03em;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
                0 0 5px rgba(181, 232, 83, 0.1),
                0 0 10px rgba(181, 232, 83, 0.1);
+  margin: 0 0 20px;
 }
 
-#main_content h1 {
+h1 {
   font-size: 30px;
+  padding: 30px 0px 10px;
 }
 
-#main_content h2 {
+h2 {
   font-size: 24px;
+  padding: 30px 0px 0px;
 }
 
-#main_content h3 {
+h3 {
   font-size: 18px;
 }
 
-#main_content h4 {
+h4 {
   font-size: 14px;
 }
 
-#main_content h5 {
+h5 {
   font-size: 12px;
   text-transform: uppercase;
   margin: 0 0 5px 0;
 }
 
-#main_content h6 {
+h6 {
   font-size: 12px;
   text-transform: uppercase;
   color: #999;
   margin: 0 0 5px 0;
 }
-
-dt {
-  font-style: italic;
-  font-weight: bold;
-}
-
-ul li {
-  list-style-image:url('../images/bullet.png');
-}
-
-blockquote {
-  color: #aaa; /* $blockquote-color */
-  padding-left: 10px;
-  border-left: 1px dotted #666; /* $blockquote-border */
-}
-
-pre {
-  background: rgba(0, 0, 0, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 10px;
-  font-size: 16px;
-  color: #b5e853;
-  border-radius: 2px;
-  word-wrap: normal;
-  overflow: auto;
-  overflow-y: hidden;
-}
-
-code.highlighter-rouge {
-  background: rgba(0,0,0,0.9);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 0px 3px;
-  margin: 0px -3px;
-  color: #aa759f;
-  border-radius: 2px;
-}
-
-table {
-  width: 100%;
-  margin: 0 0 20px 0;
-}
-
-th {
-  text-align: left;
-  border-bottom: 1px dashed #b5e853;
-  padding: 5px 10px;
-}
-
-td {
-  padding: 5px 10px;
-}
-
-hr {
-  height: 0;
-  border: 0;
-  border-bottom: 1px dashed #b5e853;
-  color: #b5e853;
-}
-
-/* Links
-   a, a:hover, a:visited
-*/
 
 a {
   color: #63c0f5;
@@ -235,49 +60,34 @@ a {
 }
 
 /*
-  Grid & Flex "place shorthand" examples
-  https://codepen.io/argyleink/pen/PoqWOPZ
+  Center All (needs to support IE and Chrome so it works for all SAP GUI versions)
+  https://stackoverflow.com/questions/396145/how-can-i-vertically-center-a-div-element-for-all-browsers-using-css
 */
 
-.flex {
-  display: flex;
-  flex-direction: column;
+.outer {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
-.grid {
-  display: grid;
+.middle {
+  display: table-cell;
+  vertical-align: middle;
 }
 
-.place-items {
-  place-items: center;
-}
-
-.place-content {
-  place-content: center;
-}
-
-.align-items-and-content {
-  align-items: center;
-  justify-content: center;
-}
-
-body {
-  display: grid;
-  place-items: center;
-  gap: 2rem;
-  padding: 2rem;
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
+  /* Whatever width you want */
 }
 
 /*
-  Additions for ABAP-Dump-Memes
-*/
-
-h1 { 
-  padding: 30px 0px 10px;
-}
-h2 { 
-  padding: 30px 0px 20px;
-}
+  Don't let meme get too big
+*/  
 .meme {
-  max-height: 640px;
+  max-height: 570px;
 }
