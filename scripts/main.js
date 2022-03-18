@@ -12,6 +12,18 @@ function setHTML(id, html) {
   document.getElementById(id).innerHTML = html;
 }
 
+function imgError(image) {
+  image.onerror = "";
+  image.src = "img/RELAX.jpg";
+  return true;
+}
+
+function vidError(video) {
+  video.onerror = "";
+  video.src = "img/CX_ROOT.mp4";
+  return true;
+}
+
 // Get Parameters from URL
 const ver = getParameterByName("version");
 const err = getParameterByName("error");
@@ -43,10 +55,10 @@ if (ver == '2' && txt) {
 }
 if (vid) {
   console.log( 'Video:' + vid );
-  setHTML("meme", '<video class="meme" autoplay loop muted defaultmuted playsinline src="' + vid + '">Sorry, your browser does not support videos</video>' );
+  setHTML("meme", '<video class="meme" autoplay loop muted defaultmuted playsinline src="' + vid + '" onerror="vidError(this);">Sorry, your browser does not support videos</video>' );
 } else {
   console.log( 'Image:' + img );
-  setHTML("meme", '<img class="meme" src="' + img + '"/>' );
+  setHTML("meme", '<img class="meme" src="' + img + '" onerror="imgError(this);"/>' );
 }
 
 // Error Code and Description
