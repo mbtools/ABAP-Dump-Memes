@@ -30,10 +30,10 @@ There are there modes:
 Parameter Value | Mode          | Source for Memes
 ----------------|---------------|------------------------
 initial         | Regular dump (default) | n/a
-1               | **Currated memes** for selected runtime errors and exceptions | See [`/img`](https://github.com/mbtools/ABAP-Dump-Memes/tree/main/img) folder
+1               | **Curated memes** for selected runtime errors and exceptions | See [`/img`](https://github.com/mbtools/ABAP-Dump-Memes/tree/main/img) folder
 2               | **Random memes** matching the description of the error or exception | Reddit search on /r/Meme community 
 
-*Beware: Mode 2 is for the brave since you don't know what you will get!*
+*Beware: Mode 2 is for the brave since you don't know what you will get!* 😈
 
 You set the mode using a parameter `ZHACK_ST22_MEMES` in transactions `SU01` or `SU3`:
 
@@ -51,7 +51,7 @@ DATA(exc) = NEW cx_sy_ref_is_initial( ).
 RAISE EXCEPTION exc.
 ```
 
-## Demo
+## Demos
 
 Here are some examples of what the result will look like:
 

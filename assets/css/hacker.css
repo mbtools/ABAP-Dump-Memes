@@ -90,6 +90,11 @@ a {
 /*
   Don't let meme get too big
 */  
+
+#meme {
+  text-align: center;
+}
+
 .meme {
   max-height: 570px;
 }
