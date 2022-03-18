@@ -11,7 +11,7 @@ ELSEIF version <> '1' AND version <> '2'.
   version = '2'.
 ENDIF.
 
-url = |https://mbtools.github.io/ABAP-Dump-Memes/index_v2.html?version={ version }|.
+url = |https://mbtools.github.io/ABAP-Dump-Memes/index.html?version={ version }|.
 
 IF cerrid IS NOT INITIAL.
   url = url && |&error={ to_upper( cerrid ) }|.
@@ -27,8 +27,18 @@ IF text IS NOT INITIAL.
   url = url && |&text={ text }|.
 ENDIF.
 
-cl_abap_browser=>show_url(
-  title        = 'Crash, Boom, Bang!'
-  size         = cl_abap_browser=>xlarge
-  url          = escape( val = url format = cl_abap_format=>e_url )
-  context_menu = abap_true ).
+TRY.
+    CALL METHOD ('CL_ABAP_BROWSER')=>show_url
+      EXPORTING
+        title        = 'Crash, Boom, Bang!'
+        size         = cl_abap_browser=>xlarge
+        url          = escape( val = url format = cl_abap_format=>e_url )
+        dialog       = abap_false " does not exist in lower releases
+        context_menu = abap_true.
+  CATCH cx_root.
+    cl_abap_browser=>show_url(
+      title        = 'Crash, Boom, Bang!'
+      size         = cl_abap_browser=>xlarge
+      url          = escape( val = url format = cl_abap_format=>e_url )
+      context_menu = abap_true ).
+ENDTRY.
